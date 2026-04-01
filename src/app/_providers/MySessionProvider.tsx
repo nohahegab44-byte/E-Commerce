@@ -1,5 +1,4 @@
 "use client"
-//بيراب الابليطاشن بتاعي كله عشان احل مشكله اليوز كلينت فاللياوت 
 import { SessionProvider } from 'next-auth/react'
 import React from 'react'
 

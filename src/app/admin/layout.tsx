@@ -4,11 +4,11 @@ import { useRouter } from "next/navigation";
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const router = useRouter();
-  const userRole = "admin"; // افتراضي دلوقتي، لاحقًا هتجي من الـ session أو token
+  const userRole = "admin"; // Replace with actual role fetching logic
 
   useEffect(() => {
     if (userRole !== "admin") {
-      router.push("/"); // لو مش admin روح للصفحة الرئيسية
+      router.push("/"); 
     }
   }, [userRole, router]);
 

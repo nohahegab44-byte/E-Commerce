@@ -17,7 +17,7 @@ export const schema = zod.object({
   // return true or false
   .refine((data) => data.password === data.rePassword, {
     error: "Passwords do not match",
-    path: ["rePassword"], // يظهر الخطأ تحت input rePassword
+    path: ["rePassword"], 
   });
 
   export type signUpDataType = zod.infer<typeof schema>;

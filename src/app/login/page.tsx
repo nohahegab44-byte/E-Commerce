@@ -26,8 +26,7 @@ export default function Page() {
   };
 
   async function onSubmit(data: logInDataType) {
-    //بقوله هسين ان بمين 
-    // بعتله الايميل والباسورد اللي دخلهم في الفورم 
+   
   const res = await signIn("credentials", {
     email: data.email,
     password: data.password,

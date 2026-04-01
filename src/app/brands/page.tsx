@@ -13,7 +13,7 @@ export default function BrandsPage() {
   useEffect(() => {
     async function fetchBrands() {
       const data = await getBrands();
-      setBrands(data || []); // array مباشرة
+      setBrands(data || []); 
       setLoading(false);
     }
 
