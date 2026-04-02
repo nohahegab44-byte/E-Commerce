@@ -20,6 +20,7 @@ export async function loginUpAction(data:logInDataType) {
         console.log(responseData);
         if (!res.ok) {
           toast.error(responseData.message || "Login failed");
+          
         }else{
           toast.success(responseData.message || "Login successful!");
           console.log("Login successful!");

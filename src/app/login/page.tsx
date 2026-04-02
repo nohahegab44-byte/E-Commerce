@@ -3,12 +3,11 @@ import { Controller, useForm } from "react-hook-form";
 import { Field, FieldError, FieldLabel } from "@/components/ui/field";
 import { Button, Input } from "@heroui/react";
 import { zodResolver } from "@hookform/resolvers/zod";
-
 import { useRouter } from "next/navigation";
 import { logInDataType, loginSchema } from "./login.schema";
-
 import { signIn } from "next-auth/react";
 import { toast } from "sonner";
+
 export default function Page() {
   const router = useRouter();
 
@@ -26,27 +25,23 @@ export default function Page() {
     input: "text-sm"
   };
 
-  async function onSubmit(data: logInDataType) {
-   
+ async function onSubmit(data: logInDataType) {
   const res = await signIn("credentials", {
     email: data.email,
     password: data.password,
-    redirect: false,
+    redirect: false, 
   });
 
   console.log("RES", res);
 
   if (res?.ok) {
-    console.log("SUCCESS");
-    toast("login success",{position:"top-center"})
+    toast.success("Login successful!", { position: "top-center" });
     router.push("/");
   } else {
-    toast("login fialed",{position:"top-center"})
-    console.log("ERROR", res?.error);
+    toast.error("Login failed! Redirecting to signup...", { position: "top-center" });
+    router.push("/signup"); 
   }
 }
-
-  
 
   return (
     <div className="relative min-h-screen flex items-center justify-center">
@@ -118,14 +113,14 @@ export default function Page() {
               </Field>
             )}
           />
-
+        
           <Button
             type="submit"
             className="bg-black text-white w-full py-3 rounded-lg cursor-pointer hover:bg-gray-800"
           >
             Log In
           </Button>
-
+          
         </form>
       </div>
     </div>

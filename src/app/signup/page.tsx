@@ -51,7 +51,7 @@ export default function Page() {
       });
       router.push("/login");
   }else{
-    toast.error(responseData.message || "Signup failed",{
+    toast.error("acount already exist",{
       position: "top-center",
       richColors: true,
     });
