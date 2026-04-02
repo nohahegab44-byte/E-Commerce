@@ -1,5 +1,7 @@
 import { NextAuthOptions } from "next-auth";
 import Credentials from "next-auth/providers/credentials";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 export const nextAuthConfig: NextAuthOptions = {
   secret: process.env.NEXTAUTH_SECRET,

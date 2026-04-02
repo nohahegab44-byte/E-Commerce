@@ -10,7 +10,9 @@ export default function AddToCardBtn({ productId }: { productId: string }) {
     const [mounted, setMounted] = useState(false);
     const [loading, setLoading] = useState(false);
 
-    useEffect(() => setMounted(true), []);
+    useEffect(() => {
+      setMounted(true);
+    }, []);
 
    async function handleAddToCart() {
   if (loading) return;
