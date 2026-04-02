@@ -27,7 +27,7 @@ export default function BrandsPage() {
   return (
     <div className="p-10">
       <h1 className="border-l-4 border-l-emerald-600 rounded-2xl font-bold text-2xl py-2 pl-2.5 ml-5 mb-5">Brands</h1>
-      <div className="grid grid-cols-2 md:grid-cols-5 gap-7 m-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 border-x border-y border-lime-50 gap-7 m-10">
         {brands.map((brand) => (
           <BrandCard key={brand._id} brand={brand} />
         ))}
