@@ -45,13 +45,13 @@ export default function Page() {
     const responseData = await res.json();
     console.log(responseData);
     if (res.ok) {
-      toast.success(responseData.message ||"Signup successful!",{
+      toast.success(responseData.msg ||"Signup successful!",{
         position: "top-center",
         richColors: true,
       });
       router.push("/login");
   }else{
-    toast.error("acount already exist",{
+    toast.error(responseData.msg || "Signup failed",{
       position: "top-center",
       richColors: true,
     });
