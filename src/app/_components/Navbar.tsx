@@ -44,7 +44,7 @@ if (!mounted) return null;
 
   function handleLogout() {
     signOut({
-      redirect: true, 
+      redirect: false, 
       callbackUrl: "/login",
     })
   }

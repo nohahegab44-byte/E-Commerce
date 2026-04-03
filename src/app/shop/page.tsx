@@ -126,7 +126,7 @@ const router = useRouter();
         <>
           <div className='w-10/12 mx-auto flex flex-col gap-6'>
             {cartProducts.map((item: cartItemType) => (
-              <div key={item.product.id} className='grid grid-cols-4 gap-6 bg-white p-6 rounded-2xl shadow'>
+              <div key={item.product.id} className='grid grid-col-1 sm:grid-col-2 lg:grid-cols-4 gap-6 bg-white p-6 rounded-2xl shadow'>
                 <img
                   className="w-full h-60 rounded-lg object-cover"
                   src={item.product.imageCover}
